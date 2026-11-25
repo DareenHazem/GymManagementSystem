@@ -1,0 +1,60 @@
+﻿@using GymManagementSystem.Entities
+@model Plan
+@{
+    // 1) C# Code Block
+
+    string pageTitle = "RouteAcademy";
+    int age = 25;
+    List<int> Numbers = [1, 2, 3, 4, 5];
+
+    /*
+    * Multiple
+    * Line
+    * Comment
+    */
+}
+<!DocType html>
+<html>
+<head>
+    <title>@pageTitle</title>
+</head>
+
+<body>  
+    <h1>Welcome To Route Academy</h1>
+    <h2>@pageTitle</h2>
+
+    <p>Age : @age years</p>
+    <p>@(age +1) </p>
+
+    @if (age >= 18)
+    {
+        <p>You are an adult</p>
+    }
+    else
+    {
+        <p> You are Under 18 </p>
+    }
+
+    <ul>
+        @foreach (int n in Numbers)
+        {
+            <li>Number : @n</li>
+        }
+    </ul>
+
+    @* <a herf = "/Home/Index"></a>*@
+
+    <a asp-controller ="Home" asp-action="Index"> </a>
+
+    <!-- a href="Products/Delete/5" -- >
+    <a asp-controller="Products" asp-action="Delete" asp-route-id="5"></a>
+
+    <environment include="Development">
+        <P>Running in Development </P>
+    </environment>
+
+    <environment exclude="Development">
+        <P>Running in Production </P>
+    </environment>
+</body>
+</html>
